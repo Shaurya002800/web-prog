@@ -1,0 +1,119 @@
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+}
+
+/* Severity Colors */
+.card.high::before { background-color: var(--warning); }
+.card.high:hover { box-shadow: 0 0 20px rgba(255, 170, 0, 0.1); }
+.high .typeBadge { color: var(--warning); border-color: rgba(255, 170, 0, 0.3); }
+
+.card.critical::before { background-color: var(--danger); box-shadow: 0 0 10px var(--danger); }
+.card.critical:hover { box-shadow: 0 0 30px rgba(255, 51, 102, 0.2); }
+.critical .typeBadge { color: var(--danger); border-color: rgba(255, 51, 102, 0.3); }
+
+.card.medium::before { background-color: var(--neon-yellow); }
+.medium .typeBadge { color: var(--neon-yellow); border-color: rgba(214, 255, 0, 0.3); }
+
+.card.low::before { background-color: var(--neon-green); }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.typeBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.timeBadge {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0.5rem 0;
+}
+
+.alertIcon {
+  flex-shrink: 0;
+  margin-top: 3px;
+  opacity: 0.8;
+}
+
+.critical .alertIcon { color: var(--danger); }
+.high .alertIcon { color: var(--warning); }
+
+.description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.footer {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1rem;
+}
+
+.readMoreBtn {
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.readMoreBtn:hover {
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green-dim);
+}

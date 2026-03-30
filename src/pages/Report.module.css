@@ -1,0 +1,330 @@
+.reportContainer {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fade-in 0.8s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.warningBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--danger);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 51, 102, 0.3);
+  background: rgba(255, 51, 102, 0.05);
+  border-radius: 4px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.subtext {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 2px;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green-glow);
+  transition: width 0.4s ease;
+}
+
+.formCard {
+  padding: 3rem;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: slide-in 0.4s ease-out;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.stepContainer h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1rem;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.categoryBtn {
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.categoryBtn:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--text-muted);
+}
+
+.categoryBtn.selected {
+  border-color: var(--neon-green);
+  background: rgba(0, 255, 65, 0.05);
+  box-shadow: inset 0 0 20px rgba(0, 255, 65, 0.1);
+  color: var(--neon-green);
+}
+
+.stepActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.iconMargin {
+  margin-left: 0.5rem;
+}
+
+.textBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.textBtn:hover {
+  color: var(--neon-yellow);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.textarea {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--neon-green);
+  background: rgba(0, 255, 65, 0.02);
+}
+
+/* UPLOAD AREA */
+.helpText {
+  color: var(--text-muted);
+  margin-top: -1rem;
+}
+
+.uploadArea {
+  border: 2px dashed var(--border-light);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.2);
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadArea:hover {
+  border-color: var(--neon-yellow);
+  background: rgba(214, 255, 0, 0.02);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.uploadPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.uploadIcon {
+  color: var(--text-muted);
+}
+
+.uploadPrompt p {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.uploadPrompt span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.evidencePreview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.fileIconPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--neon-green);
+}
+
+.removeBtn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(255, 51, 102, 0.5);
+}
+
+/* SUCCESS STATE */
+.successState {
+  text-align: center;
+  padding: 2rem 0;
+  animation: scale-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scale-up {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.successIconWrapper {
+  margin-bottom: 2rem;
+}
+
+.successIcon {
+  color: var(--neon-green);
+  filter: drop-shadow(0 0 20px var(--neon-green-glow));
+}
+
+.successState h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--neon-green);
+}
+
+.idBox {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.idBox span {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.refId {
+  font-size: 3rem;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 1rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.warningText {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .formCard {
+    padding: 1.5rem;
+  }
+}

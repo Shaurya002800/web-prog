@@ -1,0 +1,10 @@
+.matrixCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Ensures it sits at the absolute bottom */
+  pointer-events: none;
+  opacity: 0.8; 
+}
