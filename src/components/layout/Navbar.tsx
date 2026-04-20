@@ -1,11 +1,9 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, BarChart3, Search, AlertOctagon, Menu, X, Phone, Sun, Moon } from 'lucide-react';
+import { Shield, BarChart3, Search, AlertOctagon, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
